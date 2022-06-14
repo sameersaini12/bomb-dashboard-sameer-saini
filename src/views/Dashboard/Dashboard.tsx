@@ -40,6 +40,7 @@ import useWithdrawCheck from '../../hooks/boardroom/useWithdrawCheck';
 import ProgressCountdown from "../Boardroom/components/ProgressCountdown";
 import { getDisplayBalance } from '../../utils/formatBalance';
 import DepositModal from '../Boardroom/components/DepositModal';
+import useLpStatsBTC from '../../hooks/useLpStatsBTC';
 import WithdrawModal from '../Boardroom/components/WithdrawModal';
 import useTreasuryAllocationTimes from '../../hooks/useTreasuryAllocationTimes';
 import useBondsPurchasable from '../../hooks/useBondsPurchasable';
@@ -317,8 +318,12 @@ const Dashboard = () => {
           tokenName={'BShare'}
         />,
       );
-
-
+      
+    //   const bombFtmLpStats = useLpStatsBTC('BOMB-BTCB-LP');
+    //   const bombLPStats = useMemo(() => (bombFtmLpStats ? bombFtmLpStats : null), [bombFtmLpStats]);
+    // //   const bondPriceInBTCB = ((( BigInt(tBondStats?.tokenInFtm))/(BigInt(bondScale))))
+    //   const bombPriceInBTCB = ((( BigInt((bombLPStats?.ftmAmount)?(bombLPStats?.ftmAmount):0))/(BigInt((bombLPStats?.tokenAmount)?(bombLPStats?.tokenAmount):0))))
+    //     console.log(bombPriceInBTCB)
 
 
     return (
@@ -343,9 +348,11 @@ const Dashboard = () => {
                                     </tr>
                                     <tr style={{borderBottom : "0.5px solid lightgray" , marginTop: "20px"}}>
                                         <td style={{fontSize : "12px" , fontWeight : "400"}}>
-                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "center" , alignItems : "center"}}>
-                                                <img alt="bomb" src={Bomb} style={{height : "20px" , width : "20px"}}
-                                                />
+                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "start" , alignItems : "center"}}>
+                                            <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bomb" src={Bomb} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                                 $BOMB
                                             </div>
                                         </td>
@@ -363,9 +370,11 @@ const Dashboard = () => {
                                     </tr>
                                     <tr style={{borderBottom : "0.5px solid lightgray"}}>
                                         <td style={{fontSize : "12px" , fontWeight : "400"}}>
-                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "center" , alignItems : "center"}}>
-                                                <img alt="bshares" src={BShares} style={{height : "20px" , width : "20px"}}
-                                                />
+                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "start" , alignItems : "center"}}>
+                                            <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bshares" src={BShares} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                                 $BSHARES
                                             </div>
                                         </td>
@@ -383,9 +392,11 @@ const Dashboard = () => {
                                     </tr>
                                     <tr style={{borderBottom : "0.5px solid lightgray"}}>
                                         <td style={{fontSize : "12px" , fontWeight : "400"}}>
-                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "center" , alignItems : "center"}}>
-                                                <img alt="bbond" src={BBond} style={{height : "20px" , width : "20px"}}
-                                                />
+                                            <div style={{display: "flex" , flexDirection : "row" , justifyContent : "start" , alignItems : "center"}}>
+                                                <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bbond" src={BBond} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                                 $BBOND
                                             </div>
                                         </td>
@@ -405,7 +416,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={2} style={{display : "flex" , flexDirection : "column" , alignItems: "center"}}>
+                    <Grid item xs={12} sm={2} style={{display : "flex" , flexDirection : "column" , alignItems: "center" , lineHeight : "26px"}}>
                         <div style={{fontSize : "18px" , fontWeight : "600" , marginTop : "20px" }}>
                             Current Epoch
                         </div>
@@ -438,8 +449,8 @@ const Dashboard = () => {
                     </Grid>
                     <Grid item xs={12} sm={5} >
                         <div style={{display : "flex" , flexDirection : "column" , alignItems: "center" , justifyContent: "center"}}>
-                        <div style={{ borderRadius : "50%" , height : "145.83px" , width : "145.83px"  , marginBottom : "20px" , display : "flex" , flexDirection : "column", justifyContent : "center" , alignItems : "center" , borderRight : "10px solid #C3C5CB" , borderLeft : "10px solid #FC7871" , borderTop : "10px solid #78D15C" , borderBottom : "10px solid #00ADE8" }}>
-                            <div style={{color: "white" , backgroundColor : "#23284B" , borderRadius : "50%" , height : "112px" , width : "112px" , display : "flex" , flexDirection : "column", justifyContent : "center" , alignItems : "center"}}>
+                        <div style={{ borderRadius : "50%" , height : "125.83px" , width : "125.83px"  , marginBottom : "20px" , display : "flex" , flexDirection : "column", justifyContent : "center" , alignItems : "center" , borderRight : "10px solid #C3C5CB" , borderLeft : "10px solid #FC7871" , borderTop : "10px solid #78D15C" , borderBottom : "10px solid #00ADE8" }}>
+                            <div style={{color: "white" , backgroundColor : "#23284B" , borderRadius : "50%" , height : "102px" , width : "102px" , display : "flex" , flexDirection : "column", justifyContent : "center" , alignItems : "center"}}>
                                 <div>$10,451</div>
                                 <div style={{color : "lightgreen"}}>+22%</div>
                             </div>
@@ -447,45 +458,51 @@ const Dashboard = () => {
                         </div>
                             <div style={{display : "flex" , flexDirection : "row" , justifyContent : "space-evenly"}}>
                                 <div style={{display: "flex" , flexDirection: "column"}}>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center"}}>
-                                        <div>
-                                            <img alt="bomb" src={Bomb} style={{height : "20px" , width : "20px"}} />
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center", marginBottom : "5px"}}>
+                                        <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                            <img alt="bomb" src={Bomb} style={{height : "20px" , width : "20px" }}
+                                            />
                                         </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100" }}>Bomb: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
                                     </div>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center"}}>
-                                        <div>
-                                            <img alt="bshares" src={BShares} style={{height : "20px" , width : "20px"}} />
-                                        </div>
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center", marginBottom : "5px"}}>
+                                    <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bshares" src={BShares} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100"}}>BShares: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
                                     </div>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center"}}>
-                                        <div>
-                                            <img alt="bbond" src={BBond} style={{height : "20px" , width : "20px"}} />
-                                        </div>
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center", marginBottom : "5px"}}>
+                                    <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bbond" src={BBond} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100"}}>BBond: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
                                     </div>
                                 </div>
                                 <div style={{display: "flex" , flexDirection: "column"}}>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center"}}>
-                                        <div>
-                                            <img alt="bombbtcb" src={BombBTCB} style={{height : "20px" , width : "20px"}} />
-                                        </div>
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center" , marginBottom : "5px"}}>
+                                    <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bombbtct" src={BombBTCB} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100"}}>Bomb-BTCB: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
                                     </div>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center"}}>
-                                        <div>
-                                            <img alt="bsharebnb" src={BshareBNB} style={{height : "20px" , width : "20px"}} />
-                                        </div>
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center", marginBottom : "5px"}}>
+                                    <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                                    <img alt="bsharebnb" src={BshareBNB} style={{height : "20px" , width : "20px" }}
+                                                    />
+                                                </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100"}}>Bshare-BNB: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
                                     </div>
-                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center" }}>
-                                        <div style={{borderRadius : "50%" , height: "14px" , width: "14px" , backgroundColor: "lightgray"}}>
+                                    <div style={{display : "flex" , justifyContent: "start" , alignItems : "center", marginBottom : "5px" }}>
+                                    <div style={{background: "#373747" , height : "25px" , width : "25px" , borderRadius : "50%"  , marginRight: "5px" , display : "flex", justifyContent : "center" , alignItems : "center"}}>
+                                      
                                         </div>
                                         <div style={{fontSize : "12px" , fontWeight: "100"}}> Others: </div>
                                         <div style={{fontSize : "14px" , fontWeight: "500"}}>17%</div>  
@@ -495,8 +512,8 @@ const Dashboard = () => {
                     </Grid>
                 </Grid>
 
-                <Grid container style={{marginTop: "20px"}}>
-                    <Grid item sm={7}>
+                <Grid xs={12} container style={{marginTop: "20px" }} >
+                    <Grid item xs={12} sm={7}>
                         <div style={{display : "flex" , flexDirection : "column" }}>
                             <div style={{display : "flex" , justifyContent : "end" , marginBottom: "18px"}}>
                                 <span style={{color : "#9EE6FF" , fontSize : "16px", fontWeight : "600" , textDecoration : "underline"}}>Read Investment Strategy {`>`} </span>
@@ -589,8 +606,8 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item sm={5} style={{}}>
-                        <div style={{ height: "94%" , background : "rgb(32, 37, 67,.5)" ,borderRadius: "10px",color : "white" , display : "flex" , flexDirection : "column" , padding : "10px 30px 10px 30px" , border: "1px solid #728CDF" , marginLeft: "20px"}}>
+                    <Grid item xs={12} sm={5} style={{}}>
+                        <div style={{ height: "94%" , background : "rgb(32, 37, 67,.5)" ,borderRadius: "10px",color : "white" , display : "flex" , flexDirection : "column" , padding : "10px 30px 10px 30px" , border: "1px solid #728CDF" , marginLeft : "20px"}}>
                             Latest News
                         </div>
                     </Grid>
@@ -684,7 +701,7 @@ const Dashboard = () => {
                                                 <img alt="bsharebnb" src={BshareBNB} style={{height : "48px" , width : "48px"}} />
                                             </div>
                                             <div style={{display :"flex" , flexDirection : "row" , alignItems : "center"}}>
-                                                <div style={{fontSize : "22px" , fontWeight : "700" , marginRight : "6px"}}>BOMB-BTCB</div>
+                                                <div style={{fontSize : "22px" , fontWeight : "700" , marginRight : "6px"}}>BSHARE-BNB</div>
                                                 <div><button style={{backgroundColor : "rgba(0, 232, 162, 0.5)" ,backdropFilter: "blur(10px)", border: "none" , borderRadius: "3px" , height : "16px" , width : "101px"}}><span style={{fontSize: "12px" , fontWeight : "500" , color : "white"}}>Recommended</span></button></div>
                                             </div>
                                         </div>
@@ -765,9 +782,10 @@ const Dashboard = () => {
                                             </div>
                                             <div style={{fontSize: "27px" , fontWeight : "400"}}>
                                                 BBond = 
-                                                {(( BigInt(tBondStats?.tokenInFtm))/(BigInt(bondScale)))}
-                                                {(Number(bondScale))}
-                                                 BTCB
+                                                {/* {(( BigInt(tBondStats?.tokenInFtm))/(BigInt(bondScale)))}
+                                                {(Number(bondScale))} */}
+                                                {Number(tBondStats?.tokenInFtm).toFixed(4) || '-'}  
+                                                 BTC
                                             </div>
                                         </div>
                                         <div style={{display : "flex" , flexDirection : "column" , justifyContent: "start"}}>
