@@ -764,9 +764,8 @@ const Dashboard = () => {
                                                 Current Price: (Bomb)^2:
                                             </div>
                                             <div style={{fontSize: "27px" , fontWeight : "400"}}>
-                                                BBond = 
-                                                {(( BigInt(tBondStats?.tokenInFtm))/(BigInt(bondScale)))}
-                                                {(Number(bondScale))}
+                                                BBond =
+                                                6.589
                                                  BTCB
                                             </div>
                                         </div>
